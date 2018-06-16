@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginField: UITextField!
+    @IBAction func searchButton(_ sender: Any) {
+        print("searching")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "triangles.jpg")!)

@@ -12,6 +12,10 @@
 		A8087AB820D3C04E0018F3C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8087AB620D3C04E0018F3C3 /* Main.storyboard */; };
 		A8087ABA20D3C04F0018F3C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8087AB920D3C04F0018F3C3 /* Assets.xcassets */; };
 		A8087ABD20D3C04F0018F3C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8087ABB20D3C04F0018F3C3 /* LaunchScreen.storyboard */; };
+		A8087AC620D4F5F40018F3C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8087AC520D4F5F40018F3C3 /* LoginViewController.swift */; };
+		A8087AC920D4F7A40018F3C3 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8087AC820D4F7A40018F3C3 /* LoginTableViewController.swift */; };
+		A8087ACB20D4F7B50018F3C3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8087ACA20D4F7B50018F3C3 /* TableViewCell.swift */; };
+		A8087ACD20D4FEC20018F3C3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8087ACC20D4FEC20018F3C3 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		A8087AB920D3C04F0018F3C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8087ABC20D3C04F0018F3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8087ABE20D3C04F0018F3C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8087AC520D4F5F40018F3C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A8087AC820D4F7A40018F3C3 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		A8087ACA20D4F7B50018F3C3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A8087ACC20D4FEC20018F3C3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,34 @@
 		A8087AB120D3C04E0018F3C3 /* Swifty_companion */ = {
 			isa = PBXGroup;
 			children = (
+				A8087AC720D4F7860018F3C3 /* View */,
+				A8087AC420D4F5D50018F3C3 /* Controller */,
 				A8087AB220D3C04E0018F3C3 /* AppDelegate.swift */,
-				A8087AB420D3C04E0018F3C3 /* ViewController.swift */,
 				A8087AB620D3C04E0018F3C3 /* Main.storyboard */,
 				A8087AB920D3C04F0018F3C3 /* Assets.xcassets */,
 				A8087ABB20D3C04F0018F3C3 /* LaunchScreen.storyboard */,
 				A8087ABE20D3C04F0018F3C3 /* Info.plist */,
 			);
 			path = Swifty_companion;
+			sourceTree = "<group>";
+		};
+		A8087AC420D4F5D50018F3C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8087AC820D4F7A40018F3C3 /* LoginTableViewController.swift */,
+				A8087AB420D3C04E0018F3C3 /* ViewController.swift */,
+				A8087AC520D4F5F40018F3C3 /* LoginViewController.swift */,
+				A8087ACC20D4FEC20018F3C3 /* TableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8087AC720D4F7860018F3C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8087ACA20D4F7B50018F3C3 /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8087ACB20D4F7B50018F3C3 /* TableViewCell.swift in Sources */,
+				A8087ACD20D4FEC20018F3C3 /* TableViewController.swift in Sources */,
+				A8087AC620D4F5F40018F3C3 /* LoginViewController.swift in Sources */,
+				A8087AC920D4F7A40018F3C3 /* LoginTableViewController.swift in Sources */,
 				A8087AB520D3C04E0018F3C3 /* ViewController.swift in Sources */,
 				A8087AB320D3C04E0018F3C3 /* AppDelegate.swift in Sources */,
 			);
