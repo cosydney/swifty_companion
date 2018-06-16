@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBAction func loginButton(_ sender: Any) {
-        performSegue(withIdentifier: "loginSegue", sender: <#T##Any?#>)
+        performSegue(withIdentifier: "loginSegue", sender: nil)
     }
     
     override func viewDidLoad() {

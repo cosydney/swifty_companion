@@ -16,17 +16,52 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var level: UILabel!
-
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var dataImage: (String)? {
+        didSet {
+            let queue = DispatchQueue.global(qos: DispatchQoS.userInitiated.qosClass);
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true;
+            activityIndicator.hidesWhenStopped = true;
+            activityIndicator.startAnimating();
+            
+            queue.async{
+                if let url = URL(string: self.dataImage!) {
+                    do {
+                        let data = try Data(contentsOf: url);
+                        let image: UIImage = UIImage(data: data)!;
+                        
+                        DispatchQueue.main.async {
+                            self.profileImage?.image = image;
+                            self.profileImage?.contentMode = .scaleAspectFill;
+                            self.profileImage?.clipsToBounds = true;
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            self.profileImage?.backgroundColor = UIColor.lightGray;
+                            if (self.window?.rootViewController?.presentedViewController == nil) {
+                                let alert = UIAlertController(
+                                    title: "Error",
+                                    message: "Cannot access \(self.dataImage!)",
+                                    preferredStyle: UIAlertControllerStyle.alert
+                                );
+                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                                self.window?.rootViewController?.present(alert, animated: true, completion: nil);
+                            }
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating();
+                }
+            }
+        }
     }
-
+    
 }
