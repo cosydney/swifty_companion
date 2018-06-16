@@ -39,7 +39,6 @@ class TableViewCell: UITableViewCell {
                         
                         DispatchQueue.main.async {
                             self.profileImage?.image = image;
-                            self.profileImage?.contentMode = .scaleAspectFill;
                             self.profileImage?.clipsToBounds = true;
                         }
                     } catch {
